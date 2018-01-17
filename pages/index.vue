@@ -1,54 +1,76 @@
 <template>
-  <section class="container">
-    <div>欢迎来到医指康121222222222222</div>
-    <div>
-      <el-button round>圆形按钮</el-button>
-      <el-button type="primary" round>主要按钮</el-button>
-      <el-button type="success" round>成功按钮</el-button>
-      <el-button type="info" round>信息按钮</el-button>
-      <el-button type="warning" round>警告按钮</el-button>
-      <el-button type="danger" round>危险按钮</el-button>
-    </div>
-    <div>欢迎来到医指康</div>
+  <section class="contrall">
+    <div id="app">
+      <p>欢迎来到医指康</p>
+      <br/>
+      <br/>
+      <br/>
+      <div>
+        <el-button type="primary" plain @click.native="ishome">SIGN IN</el-button>
+      </div>
+      </div>
+		<div id="ismobile"><img src="~/assets/img/github.png" alt="" /><p>请在移动端打开，并刷新页面。</p></div>
   </section>
 </template>
 
 <script>
 
 export default {
-  components: {
-    // AppLogo
+  data () {
+    return {
+      //
+    }
+  },
+  // watch: {
+  //   $route (to, from) {
+  //     console.log('to', to)
+  //   }
+  // },
+  beforeRouteUpdate (to, from, next) {
+    console.log('去了那个页面', to.name)
+    next()
+  },
+  mounted () {
+    this.browserRedirect()
+  },
+  methods: {
+    browserRedirect () {
+      var sUserAgent = navigator.userAgent.toLowerCase()
+      var bIsIpad = sUserAgent.match(/ipad/i) == "ipad"
+      var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os"
+      var bIsMidp = sUserAgent.match(/midp/i) == "midp"
+      var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4"
+      var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb"
+      var bIsAndroid = sUserAgent.match(/android/i) == "android"
+      var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce"
+      var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile"
+			if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+				document.getElementById('ismobile').style.display = "none"
+				document.getElementById('app').style.display = "block"
+			} else {
+				document.getElementById('ismobile').style.display = "block"
+				document.getElementById('app').style.display = "none"
+			}
+		},
+    ishome () {
+      this.$router.push('./home')
+    }
   }
 }
 </script>
 
 <style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
+  .contrall{
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #ismobile {
+    display: none;
+    font-size: .6rem;
+    text-align: center;
+    padding-top: 4rem;
+  }
 </style>

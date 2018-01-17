@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div>个人中心{{$route.name}}</div>
   </div>
 </template>
 
@@ -9,7 +10,6 @@ export default {
 }
 </script>
 
-<style lang='less' scoped>
+<style>
 
 </style>
-
