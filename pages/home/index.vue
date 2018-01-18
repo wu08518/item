@@ -1,9 +1,13 @@
 <template>
   <div>
     <heade></heade>
+    <br/>
+    <br/>
+    <br/>
     <div>
       <el-button type="primary" @click.native="ismy">去我</el-button>
       <el-button type="success" @click.native="isshopping">去购物</el-button>
+      <el-button type="success" @click.native="istouch">touch event</el-button>
     </div>
     <router-view></router-view>
     <foote></foote>
@@ -12,8 +16,6 @@
 
 <script>
 import foote from '~/components/foote'
-import heade from '~/components/heade'
-
 export default {
   data () {
     return {
@@ -21,8 +23,7 @@ export default {
     }
   },
   components: {
-    'foote': foote,
-    'heade': heade
+    'foote': foote
   },
   methods: {
     ismy () {
@@ -30,6 +31,9 @@ export default {
     },
     isshopping () {
       this.$router.push('/home/shoppingcar')
+    },
+    istouch () {
+      this.$router.push('/home/testtouch')
     }
   }
 }

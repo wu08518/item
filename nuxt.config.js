@@ -10,7 +10,8 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'y' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'http://at.alicdn.com/t/font_397275_abkkn64rh3g6tj4i.css'}
     ]
   },
   /*
@@ -39,6 +40,7 @@ module.exports = {
     'element-ui/lib/theme-chalk/index.css'
   ],
   plugins: [
-    {src: 'plugins/element-ui.js', ssr: true}
+    {src: 'plugins/element-ui.js', ssr: true},
+    {src: 'plugins/header.js'}
   ]
 }
