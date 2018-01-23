@@ -2,7 +2,7 @@
   <div>
     <el-row class="contr">
       <el-col :span="2"></el-col>
-      <el-col :span="10"><img src="~/assets/img/deepgit.png" alt=""/></el-col>
+      <el-col :span="10"><img src="~static/img/deepgit.png" alt=""/></el-col>
       <el-col :span="4" @click.native="ishome"><i class="iconfont zhuye"></i></el-col>
       <el-col :span="4">sign in</el-col>
       <el-col :span="4">sign up</el-col>
@@ -18,7 +18,7 @@ export default {
   },
   methods: {
     ishome () {
-      this.$router.push('/')
+      this.$router.push('/home')
     }
   }
 }

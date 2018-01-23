@@ -1,8 +1,8 @@
 <template>
   <section>
     <heade></heade>
-    <div v-touch="tou" @click="handleTouch('123')">
-      hello
+    <div>
+      hello{{$route.name}}
     </div>
   </section>
 </template>
@@ -25,17 +25,8 @@ export default {
     }
   },
   mounted () {
-    this.handleT()
   },
   methods: {
-    handleTouch (val) {
-      console.log('..................' + val + '<')
-      alert('..................' + val + '<')
-    },
-    handleT () {
-      let isT = this.touch()
-      console.log('isT', isT)
-    }
   }
 }
 </script>

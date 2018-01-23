@@ -1,16 +1,19 @@
 <template>
   <div>
     <heade></heade>
-    <br/>
-    <br/>
-    <br/>
     <div>
-      <el-button type="primary" @click.native="ismy">去我</el-button>
-      <el-button type="success" @click.native="isshopping">去购物</el-button>
-      <el-button type="success" @click.native="istouch">touch event</el-button>
+      <div>订票</div>
+      <div>商务服务</div>
+      <div>订单查询</div>
+      <div>我的</div>
     </div>
     <router-view></router-view>
-    <foote></foote>
+    <foote
+      @isbook="isbook"
+      @isserverFF='serverFF'
+      @isqueryOder='isqueryOder'
+      @ismy='ismyinfo'
+    ></foote>
   </div>
 </template>
 
@@ -26,14 +29,17 @@ export default {
     'foote': foote
   },
   methods: {
-    ismy () {
-      this.$router.push('/home/myinfo')
+    isbook () {
+      this.$router.push('/home/bookid')
     },
-    isshopping () {
+    serverFF () {
       this.$router.push('/home/shoppingcar')
     },
-    istouch () {
+    isqueryOder () {
       this.$router.push('/home/testtouch')
+    },
+    ismyinfo () {
+      this.$router.push('/home/myinfo')
     }
   }
 }

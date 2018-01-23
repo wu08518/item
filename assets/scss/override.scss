@@ -1,0 +1,289 @@
+// override
+@import "mixins.scss";
+
+// 如需适配多种移动设备，建议使用rem。以下为参考值：
+html {
+  font-size: 62.5%;
+  -moz-osx-font-smoothing: grayscale; /* 4 抗锯齿，字体图标更平滑更清晰*/
+  -webkit-font-smoothing: antialiased; /* 4 */
+}
+
+body {
+  font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+  //设置14px字体   这里注意在rem前要加上对应的px值，解决不支持rem的浏览器的兼容问题，做到优雅降级
+  font-size: 14px;
+  font-size: 1.4rem;
+}
+
+/* 美化滚动条 */
+::-webkit-scrollbar {
+  display: none;
+  width: .5rem;
+  height: .5rem;
+  background: hsla(0, 0%, 100%, 0.6);
+}
+::-webkit-scrollbar-track {
+  border-radius: 0;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background-color: rgba(95,95,95,.4);
+  transition: background-color .15s;
+  &:hover {
+    background-color: rgba(95,95,95, .7);
+  }
+}
+
+/* 重写 mu-list afterTextClass */
+.afterTextClass {
+  position: absolute;
+  left: 60px;
+  font-size: 1.2rem;
+}
+.after-text {
+  position: absolute;
+  left: 60px;
+  font-size: 1.2rem;
+}
+
+/* select menu */
+.mu-menu {
+  width: auto;
+}
+.mu-menu-list.mu-menu-destop {
+  width: auto;
+}
+.mu-menu-item {
+  font-size: 1.4rem;
+}
+.mu-menu-item-wrapper.active {
+  color: #2fa4fd;
+}
+
+/* override mu-dropDown-menu */
+.mu-dropDown-menu-line {
+  display: none;
+}
+// selectFiled去掉左边的padding值
+.mu-dropDown-menu-text {
+  padding-left: 0px;
+}
+.drop-label {
+  font-size: 1.4rem;
+}
+.drop-menu {
+  font-size: 1.4rem;
+  width: 110px !important;
+}
+
+/* override mu-tabs */
+.mu-tabs {
+  background-color: #fff !important;
+}
+.mu-tab-text {
+  color: #212121 !important;
+}
+.mu-tab-link-highlight {
+  background-color: #2fa4fd;
+}
+.tab-line {
+  width: 62px;
+  min-width: 62px;
+}
+.tab-title {
+  width: 50px;
+  min-width: 50px;
+}
+
+/* override select-section mu-list */
+.list-title {
+  font-size: 1.4rem;
+}
+.mu-list {
+  padding: 0;
+}
+
+/* override */
+.clinic-after-text {
+  font-size: 1.4rem;
+  color: #fd851b;
+}
+
+.input-dir {
+  text-align: right;
+}
+// 下箭头图标大小
+.down {
+  font-size: 1.4rem;
+}
+// 选择号源字体大小
+.hint {
+  font-size: 1.4rem;
+}
+
+/* 隐私设置 list-after-text */
+.privacy-after-text {
+  position: absolute;
+  right: -2rem;
+  width: max-content;
+}
+.privacy-close-password-title {
+  font-size: 1.4rem;
+  color: #2fa4fd;
+}
+.privacy-setting-password-title {
+  font-size: 1.4rem;
+  color: #47bd26;
+}
+
+/* override dialog */
+.mu-dialog-wrapper {
+  margin-top: -100px;
+}
+.dialog {
+  border-radius: .5rem;
+  box-shadow: 0 0 0;
+}
+.dialog-title {
+  width: max-content;
+  margin: 0 auto;
+  font-size: 1.4rem;
+  padding: 8px 8px 0 8px;
+}
+.dialog-body {
+  text-align: center;
+  padding-top: 1.2rem !important;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-bottom: 24px;
+  font-size: 1.6rem;
+  color: #000;
+}
+.dialog-actions {
+  padding: 0;
+  justify-content: center;
+  // border-top: 1px solid #999;
+}
+
+.checkup-confirm-menu-icon {
+  display: none;
+}
+
+.badge {
+  .mu-badge {
+    background-color: #fff;
+    color: #000;
+  }
+}
+
+.mu-dropDown-menu-text-overflow {
+  font-size: 1.4rem;
+}
+
+/*列表右箭头样式*/
+.icon-size-right {
+  font-size: 1.4rem;
+  margin-left: 1.6rem;
+}
+
+/* override radio */
+.mu-radio-svg-icon {
+  height: 1.6rem;
+  margin-top: .4rem;
+  // color: #aaa;
+}
+.mu-radio-label {
+  text-align: left;
+  font-size: 1.5rem;
+  margin-left: -1.2rem;
+  margin-right: 1.5rem;
+  margin-top: .4rem;
+}
+
+/* checkbox label style */
+.check-label {
+  text-align: left;
+  margin-left: -1.2rem;
+}
+
+
+/*iphone 6*/
+@media (min-device-width : 375px) and (max-device-width : 667px) and (-webkit-min-device-pixel-ratio : 2){
+  body {
+    //设置15px字体   这里注意在rem前要加上对应的px值，解决不支持rem的浏览器的兼容问题，做到优雅降级
+    font-size: 15px;
+    font-size: 1.5rem;
+  }
+  .tab-line {
+    width: 50px;
+    min-width: 50px;
+  }
+  .tab-title {
+    width: 40px;
+    min-width: 40px;
+  }
+  /* override select-section mu-list */
+  .list-title {
+    font-size: 1.5rem;
+  }
+
+  // 下箭头图标大小
+  .down {
+    font-size: 1.5rem;
+  }
+  // 选择号源字体大小
+  .hint {
+    font-size: 1.5rem;
+  }
+
+  .dialog-title {
+    width: 76px;
+    width: max-content;
+    margin: 0 auto;
+    font-size: 1.5rem;
+  }
+  .dialog-body {
+    font-size: 1.8rem;
+  }
+}
+
+/*iphone 6 plus*/
+@media (min-device-width : 414px) and (max-device-width : 736px) and (-webkit-min-device-pixel-ratio : 3){
+  body {
+    //设置15px字体   这里注意在rem前要加上对应的px值，解决不支持rem的浏览器的兼容问题，做到优雅降级
+    font-size: 15px;
+    font-size: 1.5rem;
+  }
+
+  .tab-line {
+    width: 53px;
+    min-width: 53px;
+  }
+  .tab-title {
+    width: 41px;
+    min-width: 41px;
+  }
+  /* override select-section mu-list */
+  .list-title {
+    font-size: 1.5rem;
+  }
+
+  // 下箭头图标大小
+  .down {
+    font-size: 1.5rem;
+  }
+  // 选择号源字体大小
+  .hint {
+    font-size: 1.5rem;
+  }
+
+  .dialog-title {
+    width: 76px;
+    width: max-content;
+    margin: 0 auto;
+    font-size: 1.5rem;
+  }
+  .dialog-body {
+    font-size: 1.8rem;
+  }
+}
