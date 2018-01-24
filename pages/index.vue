@@ -9,7 +9,7 @@
         <el-button type="primary" plain @click.native="ishome">SIGN IN</el-button>
       </div>
       </div>
-		<div id="ismobile"><img src="static/img/github.png" alt="" /><p>请在移动端打开，并刷新页面。</p></div>
+		<div id="ismobile"><img src="~static/img/github.png" alt="" /><p>请在移动端打开，并刷新页面。</p></div>
   </section>
 </template>
 
